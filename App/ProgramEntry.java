@@ -1,3 +1,5 @@
+package App;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,11 +16,16 @@ public class ProgramEntry {
 
     JFrame window = new JFrame();
     GameBoard board = new GameBoard();
-    String gameTitle = "Snake Game version 0.5a --- ReImagined By Micah Kline";
+    String gameTitle = "App.Snake Game version 0.5a --- ReImagined By Micah Kline";
 
     public ProgramEntry(){
         initWindow();
     }
+
+    public static void main(String[] args) {
+        new ProgramEntry();
+    }
+
     // Setup the Window and add the Game Board
     public void initWindow(){
 
@@ -32,10 +39,6 @@ public class ProgramEntry {
         window.pack();
         window.setVisible( true );
 
-    }
-
-    public static void main( String[] args ){
-        new ProgramEntry();
     }
 
 

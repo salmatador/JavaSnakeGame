@@ -1,3 +1,5 @@
+package App;
+
 import java.awt.*;
 
 /**
@@ -25,25 +27,37 @@ public class Snake {
         shape = new Rectangle( x, y, wh, wh );
     }
 
+    public int getX() {
+        return x;
+    }
+
     public void setX( int x ){
         this.x = x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     public void setY( int y ){
         this.y = y;
     }
 
+    public int getWH() {
+        return wh;
+    }
+
     public void setWH( int wh ){
         this.wh = wh;
     }
+
+    public Shape getShape() {
+        return shape;
+    }
+
     public void setShape( Shape shape ){
         this.shape = shape;
     }
-
-    public int getX(){ return x; }
-    public int getY(){ return y; }
-    public int getWH(){ return  wh; }
-    public Shape getShape() { return shape; }
 
     // Move the snake
     public void increaseX(){

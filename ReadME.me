@@ -22,10 +22,10 @@ High score will reset when program is closed.....
 ****************************************************
 Extract the zip file to a folder and open a command prompt
 
-compile ProgramEntry.java
+compile App.ProgramEntry.java
 
----- javac ProgramEntry.java
+---- javac App.ProgramEntry.java
 
 run the program
 
----- java ProgramEntry
+---- java App.ProgramEntry

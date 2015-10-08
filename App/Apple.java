@@ -1,3 +1,5 @@
+package App;
+
 import java.awt.*;
 
 /**
@@ -8,7 +10,7 @@ import java.awt.*;
  * Time: 9:49 PM
  * ******************
  */
-// This is basically the same Class as Snake.java
+// This is basically the same Class as App.Snake.java
 // Need to update to draw better Apples
 public class Apple {
 
@@ -26,25 +28,37 @@ public class Apple {
         shape = new Rectangle( x, y, wh, wh );
     }
 
+    public int getX() {
+        return x;
+    }
+
     public void setX( int x ){
         this.x = x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     public void setY( int y ){
         this.y = y;
     }
 
+    public int getWH() {
+        return wh;
+    }
+
     public void setWH( int wh ){
         this.wh = wh;
     }
+
+    public Shape getShape() {
+        return shape;
+    }
+
     public void setShape( Shape shape ){
         this.shape = shape;
     }
-
-    public int getX(){ return x; }
-    public int getY(){ return y; }
-    public int getWH(){ return  wh; }
-    public Shape getShape() { return shape; }
 
 
 

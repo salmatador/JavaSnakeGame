@@ -1,9 +1,9 @@
+package App;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -15,9 +15,9 @@ import java.util.Random;
  * 0) Save High Score to File.
  * 1) Create Levels
  * 2) Create Different Speeds
- * 3) Create Better Apple Graphics
+ * 3) Create Better App.Apple Graphics
  * 4) Double Buffer Images for better Graphic Control
- * 5) Create Better Snake Graphics
+ * 5) Create Better App.Snake Graphics
  *
  *
  ********************/
@@ -25,7 +25,7 @@ import java.util.Random;
 public class GameBoard extends JPanel implements Runnable{
 
 
-    //Snake List
+    //App.Snake List
     LinkedList<Snake> snake = new LinkedList<Snake>();
     // Food List
     LinkedList<Apple> apple = new LinkedList<Apple>();
@@ -136,14 +136,15 @@ public class GameBoard extends JPanel implements Runnable{
         //board.requestFocus();
         this.setVisible(true);
 
-        // Load Snake and Apple With Initial Values
+        // Load App.Snake and App.Apple With Initial Values
         InitSnake();
         InitApple();
         // Load Demo Mode
         LoadDemoMode();
 
     }
-    // Starts a new Game Resets Snake and Apple
+
+    // Starts a new Game Resets App.Snake and App.Apple
     public void StartNewGame(){
         gameScore = 0;
         isStarted = true;
@@ -164,7 +165,8 @@ public class GameBoard extends JPanel implements Runnable{
         gameLoop = new Thread(this);
         gameLoop.start();
     }
-    // Create an Apple and Pick a new Random Location to place it
+
+    // Create an App.Apple and Pick a new Random Location to place it
     public void InitApple(){
         apple.clear();
         apple.add(new Apple(-10,-10));
@@ -173,13 +175,13 @@ public class GameBoard extends JPanel implements Runnable{
     }
 
     public void CollisionDetect(){
-    // check for Simple Collision with Apple and Snake
+        // check for Simple Collision with App.Apple and App.Snake
         int x = snake.get(0).getX();
         int y = snake.get(0).getY();
         int x1 = apple.get(0).getX();
         int y1 = apple.get(0).getY();
 
-        // Checks For Collision With Apple
+        // Checks For Collision With App.Apple
         if( x == x1 && y == y1){
           newApple();
           gameScore = gameScore + 100;
@@ -203,9 +205,10 @@ public class GameBoard extends JPanel implements Runnable{
         apple.get(0).setY(rand.nextInt((40))*10+10);
         // TODO
         // Need to check and see if apple was dropped on the snake
-        // if it was Try get a new Apple
+        // if it was Try get a new App.Apple
     }
-    // Reset Snake and change high score if Applicable
+
+    // Reset App.Snake and change high score if Applicable
     public void resetSnake(){
         snake.clear();
         isEqual = false;
@@ -291,7 +294,7 @@ public class GameBoard extends JPanel implements Runnable{
             if(direction.equals("NORTH")){ NORTH = true; }
             isKeyPress = false;
         }
-        // Iterate through Snake List
+        // Iterate through App.Snake List
         for( int link = snake.size()-1; link >= 0; link--){
             // If snake is not the Head move each link up one link position
             if( link != 0 ){
@@ -337,7 +340,7 @@ public class GameBoard extends JPanel implements Runnable{
         super.paintComponent(graphics);
         Graphics2D g2d = (Graphics2D) graphics;
 
-        // sets Background of Snake Pit
+        // sets Background of App.Snake Pit
         g2d.setColor(Color.darkGray);
         g2d.fill(new Rectangle(10,10,480,420));
 
@@ -349,13 +352,15 @@ public class GameBoard extends JPanel implements Runnable{
 
 
     }
-    // Draw The Apple
+
+    // Draw The App.Apple
     public Graphics2D drawApple(Graphics2D g2d){
         g2d.setColor(Color.green);
         g2d.fill(new Rectangle(apple.get(0).getX(), apple.get(0).getY(), 8,8));
         return g2d;
     }
-    // Draw The Snake
+
+    // Draw The App.Snake
     public Graphics2D drawSnake(Graphics2D g2d){
         for ( int links = snake.size()-1; links > -1; links-- ){
 
