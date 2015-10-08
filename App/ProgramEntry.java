@@ -16,7 +16,7 @@ public class ProgramEntry {
 
     JFrame window = new JFrame();
     GameBoard board = new GameBoard();
-    String gameTitle = "App.Snake Game version 0.5a --- ReImagined By Micah Kline";
+    String gameTitle = "App.Snake Game version 0.6a --- ReImagined By Micah Kline";
 
     public ProgramEntry(){
         initWindow();
